@@ -188,9 +188,7 @@ def get_install_dir():
 def get_exec_dir():
     exec_dir = None
     while not exec_dir:
-        prompt_message = "In what directory would you like to place the '{}' executable?".format(EXECUTABLE_NAME)
-        exec_dir = prompt_input_with_default(prompt_message, DEFAULT_EXEC_DIR)
-        exec_dir = os.path.realpath(os.path.expanduser(exec_dir))
+        exec_dir = DEFAULT_EXEC_DIR
         if ' ' in exec_dir:
             print_status("The executable directory '{}' cannot contain spaces.".format(exec_dir))
             exec_dir = None
